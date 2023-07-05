@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './Container.module.css';
 const Container = ({ children, customClass }) => {
   return (
-    <div className={`${styles.container} ${styles[customClass]}`}>
+    <section className={`${styles.container} ${styles[customClass]}`}>
       {children}
-    </div>
+    </section>
   );
 };
 
