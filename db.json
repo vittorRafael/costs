@@ -1,5 +1,28 @@
 {
-  "projetos": [],
+  "projetos": [
+    {
+      "nome": "Teste",
+      "valorTotal": "5000",
+      "categoria": {
+        "id": "2",
+        "nome": "Desenvolvimento"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 1
+    },
+    {
+      "nome": "Criar Servidor e Alocar Site",
+      "valorTotal": "8000",
+      "categoria": {
+        "id": "1",
+        "nome": "Infra"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 2
+    }
+  ],
   "categorias": [
     {
       "id": 1,
