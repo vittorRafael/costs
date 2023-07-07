@@ -21,6 +21,39 @@
       "custo": 0,
       "servicos": [],
       "id": 2
+    },
+    {
+      "nome": "Teste2",
+      "valorTotal": "10000",
+      "categoria": {
+        "id": "1",
+        "nome": "Infra"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 3
+    },
+    {
+      "nome": "Teste3",
+      "valorTotal": "30000",
+      "categoria": {
+        "id": "4",
+        "nome": "Planejamento"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 4
+    },
+    {
+      "nome": "Teste4",
+      "valorTotal": "20000",
+      "categoria": {
+        "id": "2",
+        "nome": "Desenvolvimento"
+      },
+      "custo": 0,
+      "servicos": [],
+      "id": 5
     }
   ],
   "categorias": [

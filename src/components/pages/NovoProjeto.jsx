@@ -19,7 +19,9 @@ const NovoProjeto = () => {
       .then((r) => r.json())
       .then((data) => {
         console.log(data);
-        history('/projetos', { message: 'Projeto criado com sucesso!' });
+        history('/projetos', {
+          state: { message: 'Projeto criado com sucesso!' },
+        });
       })
       .catch((err) => console.log(err));
   }
