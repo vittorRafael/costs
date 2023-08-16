@@ -14,7 +14,7 @@ const Projetos = () => {
 
   React.useEffect(() => {
     setTimeout(() => {
-      fetch('http://localhost:5000/projetos', {
+      fetch('http://localhost:3333/projetos', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -24,6 +24,7 @@ const Projetos = () => {
         .then((r) => {
           setProjetos(r);
           setRemoveLoading(true);
+          console.log(r);
         })
         .catch((err) => console.log(err));
     }, 500);
@@ -37,15 +38,12 @@ const Projetos = () => {
   }
 
   function removeProjeto(id) {
-    fetch(`http://localhost:5000/projetos/${id}`, {
+    fetch(`http://localhost:3333/projetos/${id}`, {
       method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     })
       .then((r) => r.json())
       .then((r) => {
-        setProjetos(projetos.filter((projeto) => projeto.id !== id));
+        setProjetos(projetos.filter((projeto) => projeto._id !== id));
         setProjetoMessage('Projeto removido com sucesso!');
       })
       .catch((err) => console.log(err));
@@ -64,9 +62,9 @@ const Projetos = () => {
         {projetos.length > 0 &&
           projetos.map((projeto) => (
             <ProjetoCard
-              key={projeto.id}
               projeto={projeto}
               handleRemove={removeProjeto}
+              key={projeto._id}
             />
           ))}
         {!removerLoading && <Loading />}

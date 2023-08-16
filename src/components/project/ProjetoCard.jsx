@@ -6,7 +6,7 @@ import { BsPencil, BsFillTrashFill } from 'react-icons/bs';
 const ProjetoCard = ({ projeto, handleRemove }) => {
   const remove = (e) => {
     e.preventDefault();
-    handleRemove(projeto.id);
+    handleRemove(projeto._id);
   };
 
   return (
@@ -18,11 +18,11 @@ const ProjetoCard = ({ projeto, handleRemove }) => {
       <p className={styles.categoriaText}>
         <span
           className={`${styles[projeto.categoria.nome.toLowerCase()]}`}
-        ></span>{' '}
-        R$ {projeto.categoria.nome}
+        ></span>
+        {projeto.categoria.nome}
       </p>
       <div className={styles.projetoCardActions}>
-        <Link to={`/projeto/${projeto.id}`}>
+        <Link to={`/projeto/${projeto._id}`}>
           <BsPencil /> Editar
         </Link>
         <button onClick={remove}>

@@ -19,7 +19,7 @@ const Projeto = () => {
   const [tipo, setTipo] = React.useState();
   React.useEffect(() => {
     setTimeout(() => {
-      fetch(`http://localhost:5000/projetos/${id}`, {
+      fetch(`http://localhost:3333/projetos/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const Projeto = () => {
       return false;
     }
 
-    fetch(`http://localhost:5000/projetos/${id}`, {
+    fetch(`http://localhost:3333/projetos/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const Projeto = () => {
     projeto.custo = newCost;
 
     //update project
-    fetch(`http://localhost:5000/projetos/${projeto.id}`, {
+    fetch(`http://localhost:3333/projetos/${projeto._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -110,10 +110,10 @@ const Projeto = () => {
     );
     const projetoUpdate = projeto;
 
-    projetoUpdate.servicos = servicesUpdate;
+    projetoUpdate.servicos = [...servicesUpdate];
     projetoUpdate.custo = parseFloat(projetoUpdate.custo) - parseFloat(custo);
 
-    fetch(`http://localhost:5000/projetos/${projetoUpdate.id}`, {
+    fetch(`http://localhost:3333/projetos/${projetoUpdate._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
