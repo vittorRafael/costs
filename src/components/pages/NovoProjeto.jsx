@@ -9,7 +9,7 @@ const NovoProjeto = () => {
     projeto.custo = 0;
     projeto.servicos = [];
 
-    fetch('http://localhost:3333/projetos', {
+    fetch('https://costsbackend.onrender.com/projetos', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',

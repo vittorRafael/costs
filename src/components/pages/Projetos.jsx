@@ -14,7 +14,7 @@ const Projetos = () => {
 
   React.useEffect(() => {
     setTimeout(() => {
-      fetch('http://localhost:3333/projetos', {
+      fetch('https://costsbackend.onrender.com/projetos', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const Projetos = () => {
   }
 
   function removeProjeto(id) {
-    fetch(`http://localhost:3333/projetos/${id}`, {
+    fetch(`https://costsbackend.onrender.com/projetos/${id}`, {
       method: 'DELETE',
     })
       .then((r) => r.json())

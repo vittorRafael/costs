@@ -9,7 +9,7 @@ const ProjetoForm = ({ btnText, handleSubmit, projetoData }) => {
   const [projeto, setProjeto] = React.useState(projetoData || []);
 
   React.useEffect(() => {
-    fetch('http://localhost:3333/categorias', {
+    fetch('https://costsbackend.onrender.com/categorias', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
