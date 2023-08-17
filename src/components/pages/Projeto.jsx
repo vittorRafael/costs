@@ -18,19 +18,17 @@ const Projeto = () => {
   const [mensagem, setMensagem] = React.useState();
   const [tipo, setTipo] = React.useState();
   React.useEffect(() => {
-    setTimeout(() => {
-      fetch(`https://costsbackend.onrender.com/projetos/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((r) => r.json())
-        .then((r) => {
-          setProjeto(r);
-          setServices(r.servicos);
-        });
-    }, 1000);
+    fetch(`https://costsbackend.onrender.com/projetos/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        setProjeto(r);
+        setServices(r.servicos);
+      });
   }, [id]);
 
   function editPost(projeto) {

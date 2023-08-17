@@ -13,21 +13,19 @@ const Projetos = () => {
   const [projetoMessage, setProjetoMessage] = React.useState('');
 
   React.useEffect(() => {
-    setTimeout(() => {
-      fetch('https://costsbackend.onrender.com/projetos', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+    fetch('https://costsbackend.onrender.com/projetos', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        setProjetos(r);
+        setRemoveLoading(true);
+        console.log(r);
       })
-        .then((r) => r.json())
-        .then((r) => {
-          setProjetos(r);
-          setRemoveLoading(true);
-          console.log(r);
-        })
-        .catch((err) => console.log(err));
-    }, 500);
+      .catch((err) => console.log(err));
   }, []);
 
   const location = useLocation();
